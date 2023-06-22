@@ -1,213 +1,60 @@
-# EDA_presentation
+# Event-Driven Architecture (EDA)
 
-## Introduction
-
-**Slide 1: Title slide - "Event Driven Architecture: Building Reactive Systems with C# and Angular"**
-
-Text: Event Driven Architecture: Building Reactive Systems with C# and Angular
-
-Presenter comment: Welcome everyone and introduce yourself. Explain the goal of the presentation.
-
-**Slide 2: Agenda - list the main sections of the presentation**
-
-Text: Agenda
-
-- Pub/Sub vs RPC and Distributed Systems
-- Clients and Task-Based UIs
-- Server-Side and CQRS
-- Event Sourcing and its relation to EDA
-- Conclusion and Q&A
-
-Presenter comment: Briefly overview the agenda and explain what will be covered in each section.
+## Agenda
+1. Pub/Sub vs RPC and Distributed Systems
+2. Clients and Task-Based UIs
+3. Server-Side and CQRS
+4. Event Sourcing and its relation to EDA
+5. Conclusion and Q&A
 
 ## Pub/Sub vs RPC and Distributed Systems
 
-**Slide 3: Definition and comparison of Pub/Sub and RPC**
+Pub/Sub and RPC are two different communication patterns used in distributed systems. 
 
-Text: Pub/Sub:
+![Pub/Sub Diagram](https://cloud.google.com/pubsub/architecture)
+*Diagram illustrating the Pub/Sub communication pattern.*
 
-- Asynchronous messaging pattern
-- Publishers send messages to channels
-- Decoupled communication
+![RPC Diagram](https://www.geeksforgeeks.org/what-is-rpc-mechanism-in-distributed-system/)
+*Diagram illustrating the RPC communication pattern.*
 
-RPC:
+Distributed systems are systems where components located on networked computers communicate and coordinate their actions by passing messages.
 
-- Synchronous communication pattern
-- Client makes a request and waits for a response
-- Tightly coupled communication
-
-Presenter comment: Explain the differences between Pub/Sub and RPC and provide a brief overview of each pattern.
-
-**Slide 4: Benefits and drawbacks of each approach**
-
-Text: Pub/Sub:
-
-- Scalable
-- Decoupled
-- Asynchronous
-- Complex to manage and debug
-
-RPC:
-
-- Simple and straightforward
-- Tightly coupled
-- Not easily scalable
-
-Presenter comment: Discuss the benefits and drawbacks of each pattern and when to use them.
-
-**Slide 5: Overview of distributed systems**
-
-Text: Distributed Systems
-
-- Components located on different machines
-- Communicate and coordinate actions by passing messages
-
-Presenter comment: Introduce distributed systems and explain their importance in modern software architectures.
+![Distributed Systems Diagram](https://www.researchgate.net/figure/A-simple-architecture-of-a-distributed-system_fig10_287198069)
+*Diagram illustrating a distributed system.*
 
 ## Clients and Task-Based UIs
 
-**Slide 6: Introduction to task-based UIs**
+Task-based UIs are designed around the tasks that a user needs to perform, not around the data that those tasks manipulate.
 
-Text: Task-Based UIs
+![Task-Based UI Diagram](https://codeopinion.com/decomposing-crud-to-a-task-based-ui/)
+*Diagram illustrating a task-based UI.*
 
-- Focus on user tasks, not system features
-- Improve usability and user experience
+Uni-directional flow is a concept in which the data flows in a single direction, which makes the application more predictable and easier to understand.
 
-Presenter comment: Explain the concept of task-based UIs and their benefits.
-
-**Slide 7: Uni-directional flow in task-based UIs**
-
-Text: Uni-directional flow
-
-- Data flows in a single direction
-- Makes state management more predictable
-- Used in Angular with RxJS observables
-
-Presenter comment: Introduce the concept of uni-directional flow and explain its importance in task-based UIs.
-
-**Slide 8: Applying uni-directional flow to client-side and server-side events**
-
-Text: Client-side and server-side events
-
-- Use Angular services to communicate with C# backend
-- Leverage SignalR for real-time updates
-
-Presenter comment: Discuss how uni-directional flow can be applied to both client-side and server-side events.
-
-**Slide 9: Example of a task-based UI in a real-world application**
-
-Text: Real-world example
-
-- Task-based UI with Angular and TypeScript
-
-Presenter comment: Show a real-world example of a task-based UI using Angular and TypeScript.
+![Uni-directional Flow Diagram](https://coderpad.io/blog/development/master-react-unidirectional-data-flow/)
+*Diagram illustrating uni-directional flow.*
 
 ## Server-Side and CQRS
 
-**Slide 10: Introduction to CQRS**
+Command Query Responsibility Segregation (CQRS) is a pattern that segregates the operations that read data (queries) from the operations that update data (commands) by using separate interfaces.
 
-Text: CQRS (Command Query Responsibility Segregation)
+![CQRS Diagram 1](https://learn.microsoft.com/en-us/azure/architecture/patterns/cqrs)
+*Diagram illustrating the CQRS pattern.*
 
-- Separates read and write operations
-- Improves scalability and maintainability
-
-Presenter comment: Introduce CQRS and explain its purpose and benefits.
-
-**Slide 11: Benefits and drawbacks of CQRS**
-
-Text: Benefits of CQRS:
-
-- Scalability
-- Maintainability
-- Flexibility
-
-Drawbacks of CQRS:
-
-- Increased complexity
-- Eventual consistency
-
-Presenter comment: Discuss the benefits and drawbacks of CQRS and when it makes sense to use it.
-
-**Slide 12: When to use CQRS**
-
-Text: When to use CQRS
-
-- Complex domains
-- High-performance requirements
-- Separate read and write models
-
-Presenter comment: Explain the scenarios where implementing CQRS is most beneficial.
-
-**Slide 13: Example of CQRS implementation in a real-world application using C#**
-
-Text: Real-world example
-
-- CQRS implementation with C# and .NET Core
-
-Presenter comment: Show a real-world example of a CQRS implementation using C# and .NET Core.
+![CQRS Diagram 2](https://www.ibm.com/cloud/architecture/architectures/event-driven-cqrs-pattern/)
+*Another diagram illustrating the CQRS pattern.*
 
 ## Event Sourcing and its relation to EDA
 
-**Slide 14: Introduction to Event Sourcing**
+Event Sourcing is a pattern where state changes are logged as a time-ordered sequence of records.
 
-Text: Event Sourcing
+![Event Sourcing Diagram 1](https://learn.microsoft.com/en-us/azure/architecture/patterns/event-sourcing)
+*Diagram illustrating Event Sourcing.*
 
-- Store and retrieve application state as a sequence of events
-- Full audit log, ability to replay events, and improved debugging
-
-Presenter comment: Introduce Event Sourcing and explain its purpose and benefits.
-
-**Slide 15: Benefits and drawbacks of Event Sourcing**
-
-Text: Benefits of Event Sourcing:
-
-- Full audit log
-- Replay events
-- Improved debugging
-
-Drawbacks of Event Sourcing:
-
-- Increased complexity
-- Event versioning
-- Storage considerations
-
-Presenter comment: Discuss the benefits and drawbacks of Event Sourcing and when it makes sense to use it.
-
-**Slide 16: How Event Sourcing relates to and differs from EDA**
-
-Text: Event Sourcing and EDA
-
-- EDA focuses on system design and communication
-- Event Sourcing focuses on how state is stored and retrieved
-- Both can be used together for highly reactive and scalable systems
-
-Presenter comment: Explain the relationship between Event Sourcing and EDA, and how they can complement each other.
-
-**Slide 17: Example of Event Sourcing implementation in a real-world application using C# and Angular**
-
-Text: Real-world example
-
-- Event Sourcing with C# backend and Angular frontend
-
-Presenter comment: Show a real-world example of an Event Sourcing implementation using C# and Angular.
+![Event Sourcing Diagram 2](https://medium.com/design-microservices-architecture-with-patterns/event-sourcing-pattern-in-microservices-architectures-e72bf0fc9274)
+*Another diagram illustrating Event Sourcing.*
 
 ## Conclusion and Q&A
 
-**Slide 18: Summary of key points from the presentation**
+In conclusion, Event-Driven Architecture (EDA) is a powerful architectural pattern that can provide numerous benefits for distributed systems.
 
-Text: Summary
-
-- Differences between Pub/Sub and RPC
-- Task-based UIs with Angular and uni-directional flow
-- CQRS and Event Sourcing in C# backend applications
-- How EDA relates to and complements Event Sourcing
-
-Presenter comment: Recap the main points covered in the presentation and emphasize the importance of each.
-
-**Slide 19: Q&A and contact information**
-
-Text: Q&A
-
-Contact info: [Kristoffer Rolf Deinoff](mailto:kristoffer.deinoff@glasspaper.no), [LinkedIn](www.linkedin.com/deicon)
-
-Presenter comment: Encourage the audience to ask questions and provide your contact information for follow-up discussions.
